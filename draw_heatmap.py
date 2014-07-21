@@ -95,7 +95,7 @@ def load_prices(fs, price_per_room=False):
                 prices.append((price, float(lat), float(lon)))
 
     return prices
-
+    
 def distance(x1,y1,x2,y2):
     return math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2))
 
@@ -207,8 +207,9 @@ def start(fname, price_per_X):
         x, y = ll_to_pixel(lat, lon)
         if 0 <= x < MAX_X and 0 <= y < MAX_Y:
             IM[x,y] = (0,0,0)
+    I.save(fname + "." + price_per_X + "." + str(MAX_X) + ".png", "PNG")  
+    
 
-    I.save(fname + "." + price_per_X + "." + str(MAX_X) + ".png", "PNG")
 
 if __name__ == "__main__":
     if len(sys.argv) > 3 or len(sys.argv) < 2:

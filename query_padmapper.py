@@ -5,10 +5,10 @@ import json
 import time
 
 # boston
-MIN_LAT=42.255594
-MAX_LAT=42.4351936
-MIN_LON=-71.1828231
-MAX_LON=-70.975800
+#MIN_LAT=42.255594
+#MAX_LAT=42.4351936
+#MIN_LON=-71.1828231
+#MAX_LON=-70.975800
 
 # baltimore
 #MAX_LAT=39.388979
@@ -27,6 +27,12 @@ MAX_LON=-70.975800
 #MAX_LON=-121.62
 #MAX_LAT=37.83
 #MIN_LON=-122.70
+
+#Vancouver
+MIN_LAT=49.200703
+MAX_LON = -123.023654
+MAX_LAT = 49.295728
+MIN_LON = -123.226557
 
 MAX_RENT=6050
 
@@ -102,7 +108,7 @@ def start():
     seen_ids = set()
 
     epoch_timestamp = int(time.mktime(time.gmtime()))
-    with open("apts-%s.txt" % epoch_timestamp, 'w') as outf:
+    with open("apts-vancouver-07-21-2014.txt", 'w') as outf:
         for rent in range(100,MAX_RENT,25):
             print "querying from $%s ..." % rent
             for bedrooms in range(10):
